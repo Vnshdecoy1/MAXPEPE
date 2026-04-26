@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MEGA - Make Ethereum Great Again</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#8e2c01",
+                      "surface-container-high": "#2a2a2a",
+                      "outline-variant": "#5b3f44",
+                      "error": "#ffb4ab",
+                      "background": "#131313",
+                      "outline": "#ab888d",
+                      "on-error": "#690005",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-tint": "#ffb2be",
+                      "on-secondary-fixed": "#380c00",
+                      "on-tertiary-container": "#fff8f6",
+                      "tertiary-fixed": "#ffdbc8",
+                      "surface-bright": "#393939",
+                      "on-primary": "#660026",
+                      "tertiary-fixed-dim": "#ffb68a",
+                      "primary-fixed-dim": "#ffb2be",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#ffb2be",
+                      "primary-container": "#e0115f",
+                      "on-secondary-container": "#ffaa8d",
+                      "on-surface-variant": "#e4bdc2",
+                      "surface-variant": "#353534",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#ffdbcf",
+                      "on-background": "#e5e2e1",
+                      "surface-container-highest": "#353534",
+                      "surface-container": "#201f1f",
+                      "on-surface": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#743500",
+                      "inverse-on-surface": "#313030",
+                      "secondary-fixed-dim": "#ffb59c",
+                      "on-secondary-fixed-variant": "#822800",
+                      "on-tertiary": "#522300",
+                      "on-tertiary-fixed": "#321300",
+                      "on-secondary": "#5c1a00",
+                      "surface-container-low": "#1c1b1b",
+                      "surface": "#131313",
+                      "primary-fixed": "#ffd9de",
+                      "surface-container-lowest": "#0e0e0e",
+                      "tertiary-container": "#af5d21",
+                      "tertiary": "#ffb68a",
+                      "surface-dim": "#131313",
+                      "on-primary-fixed": "#3f0015",
+                      "on-primary-fixed-variant": "#900039",
+                      "inverse-primary": "#bc004d",
+                      "secondary": "#ffb59c",
+                      "on-primary-container": "#fff8f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "20px",
+                      "margin": "32px",
+                      "xl": "40px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "unit": "4px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aura-glow {
+            filter: blur(100px);
+            opacity: 0.15;
+            background: radial-gradient(circle, #e0115f 0%, transparent 70%);
+        }
+        .ruby-card {
+            background: linear-gradient(145deg, #1e1e1e 0%, #131313 100%);
+            border: 1px solid rgba(224, 17, 95, 0.1);
+        }
+        .ruby-card:hover {
+            border-color: rgba(224, 17, 95, 0.4);
+            box-shadow: 0 0 20px rgba(224, 17, 95, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Nav Shell -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/90 backdrop-blur-xl border-b border-rose-900/20 shadow-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-8 py-3 md:py-4 max-w-7xl mx-auto gap-2 md:gap-0">
+<div class="text-xl md:text-2xl font-black italic text-rose-600 tracking-tighter">MEGA</div>
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 font-['Inter'] tracking-tight text-[11px] md:text-sm">
+<a class="text-rose-500 border-b-2 border-rose-500 pb-0.5 md:pb-1" href="index.html">Ecosystem</a>
+<a class="text-neutral-400 hover:text-rose-400 transition-colors" href="index.html#tokenomics">Tokenomics</a>
+<a class="text-neutral-400 hover:text-rose-400 transition-colors" href="roadmap.html">Roadmap</a>
+<a class="text-neutral-400 hover:text-rose-400 transition-colors" href="whitepaper.html">Whitepaper</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 px-margin overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<img alt="Vitalik Buterin Ethereum Throne" class="w-full h-full object-cover opacity-40 mix-blend-lighten" data-alt="Cinematic depiction of Vitalik Buterin sitting on a throne surrounded by Ethereum and various cryptocurrency symbols in a green-glowing digital city environment." src="https://lh3.googleusercontent.com/aida/ADBb0ugJkPG_graknbufZmWW_YH3vLqjUmEEO_cHo2xjMDIjKPniPtd1CD0kIFJ6Sxes6AdO1LOo0xgh_BPqSo-f4VPkJOFYbykul6faPywUAkkTBv1OV2Iw2M9J4Cr9rixq67ncJsVlDD6i_95Ob0S6hS6Kn509TdYM2aygXN4aPa7btGdYPel5r2nV3QFiIgJuft4tR8g9GFoRDaW2Jrn-ES_8BNElBff5AP2VaC4MqKTY9ExJlFFVeSLJvOJJ0rL6nqh_jXQGZEJb" style=""/>
+</div>
+<!-- Decorative Auras -->
+<div class="absolute -top-20 -left-20 w-[600px] h-[600px] aura-glow"></div>
+<div class="absolute -bottom-20 -right-20 w-[600px] h-[600px] aura-glow" style="background: radial-gradient(circle, #ffb59c 0%, transparent 70%);"></div>
+<div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-md">
+<div class="inline-flex items-center gap-2 bg-primary-container/20 border border-primary-container/30 px-4 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="auto_awesome" style="">auto_awesome</span>
+<span class="text-primary font-label-md text-label-md" style="">$MEGA</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl leading-tight" style="">
+                    Make <span class="text-primary-container drop-shadow-[0_0_10px_rgba(224,17,95,0.6)]" style=""> ETHEREUM</span><div class="" style="">Great Again</div></h1><p class="text-on-surface-variant font-body-lg text-body-lg max-w-xl mt-4" style="">Now, it's time for a comeback. It's time to reignite the vision, optimize scalability, empower the community, and restore Ethereum to its rightful place at the top. Let’s Make Ethereum Great Again.</p>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-xl" style="">
+                    Experience the next evolution of blockchain interaction. Aether Protocol fuses mystical anime aesthetics with high-performance DeFi primitives to build an ecosystem that feels alive.
+                </p>
+<div class="flex flex-wrap gap-md pt-md">
+<a href="https://app.uniswap.org/explore/tokens/ethereum/0x971ECeE62138fF32aA37e3b78683af9787E34d02" target="_blank" class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-[0_0_25px_rgba(224,17,95,0.5)] transition-all no-underline" style="">BUY NOW <span class="material-symbols-outlined" data-icon="bolt" data-weight="fill" style='font-variation-settings: "FILL" 1;'>bolt</span></a>
+<a href="https://dexscreener.com/ethereum/0x18fd0ccf16dc4bbdf6fe8f6b681447c32a2955ce" target="_blank" class="border-2 border-outline-variant bg-surface-container/50 backdrop-blur-md text-on-surface px-8 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all no-underline" style="">CHART</a>
+</div>
+</div>
+<div class="hidden lg:block relative group">
+<div class="absolute inset-0 bg-primary-container/20 rounded-[2rem] blur-3xl group-hover:bg-primary-container/30 transition-all duration-700"></div>
+<div class="relative rounded-[2rem] border border-rose-900/30 overflow-hidden shadow-2xl">
+<img alt="Make Ethereum Great Again character" class="w-full aspect-square object-cover" data-alt="A cinematic depiction of a man wearing a red 'Make Ethereum Great Again' hat with glowing green eyes, representing the $MEGA movement." src="https://lh3.googleusercontent.com/aida/ADBb0uhAQyP7pT_hbFwGFMmp6AhBORfWfwpyk_5cRSlsDQCpSCBH_xyftnT279FLfvGNlesH9vPDwStnm8JF_BXru73oUw3Go-mi_taJisIicwFqQ36J_ONZcxC9uH5Zab4okT71Atl2A5dFHoYvMy2FhSZf3Vu19NvAU_VDc5c3sVMCyOsg81396szlRzs5a4XlSt7e28SapPJM4wan1Zw3mo56z8CtvCAZ7SrW1P_UO5QOSUOqal5ZOlfiw7HLsNHWZ1HFclVLY39H7w" style=""/>
+</div>
+</div>
+</div>
+</header>
+<!-- Tokenomics Section -->
+<section class="py-24 px-margin relative" id="tokenomics">
+<div class="max-w-7xl mx-auto">
+<!-- Contract & Explorers -->
+<div class="text-center mb-8">
+<p class="text-outline text-xs font-mono break-all mb-3">Contract: 0x971ecee62138ff32aa37e3b78683af9787e34d02</p>
+<div class="flex flex-wrap justify-center gap-2">
+<a href="https://etherscan.io/token/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank" class="text-xs bg-surface-container px-3 py-1 rounded-full border border-outline-variant hover:border-primary transition-all text-on-surface-variant no-underline">Etherscan</a>
+<a href="https://gmgn.ai/eth/token/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank" class="text-xs bg-surface-container px-3 py-1 rounded-full border border-outline-variant hover:border-primary transition-all text-on-surface-variant no-underline">GMGN.AI</a>
+<a href="https://tokensniffer.com/token/1/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank" class="text-xs bg-surface-container px-3 py-1 rounded-full border border-outline-variant hover:border-primary transition-all text-on-surface-variant no-underline">Token Sniffer</a>
+<a href="https://dexscreener.com/ethereum/0x18fd0ccf16dc4bbdf6fe8f6b681447c32a2955ce" target="_blank" class="text-xs bg-surface-container px-3 py-1 rounded-full border border-outline-variant hover:border-primary transition-all text-on-surface-variant no-underline">DexScreener</a>
+</div>
+</div>
+<!-- Liquidity Banner -->
+<div class="max-w-3xl mx-auto mb-16">
+<div class="ruby-card p-4 rounded-xl">
+<p class="text-on-surface-variant text-sm leading-relaxed"><strong class="text-on-surface">Liquidity:</strong> Initial pool created with 100% of the total supply paired against 0.65 ETH on Uniswap v2. The LP tokens were burned immediately at launch — 100% LP burned.</p>
+</div>
+</div>
+<!-- Tokenomics Heading -->
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4" style="">Eternal Tokenomics</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto" style="">Balanced for longevity, fueled by the Ruby core. Our economic model ensures fair distribution and sustainable growth.</p>
+</div>
+<!-- Tokenomics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="ruby-card p-lg rounded-[16px] flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-md border border-primary-container/30">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="database" style="">database</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2" style="">1B Total Supply</h3>
+<p class="text-on-surface-variant text-label-md" style="">Fixed supply cap to prevent inflation and preserve value across the ecosystem cycles.</p>
+</div>
+<div class="ruby-card p-lg rounded-[16px] flex flex-col items-center text-center border-primary-container/40 bg-surface-container-high">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="local_fire_department" data-weight="fill" style='font-variation-settings: "FILL" 1;'>local_fire_department</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary" style="">Supply Burnt</h3>
+<p class="text-on-surface-variant text-label-md" style="">A total of 5% supply has been incinerated, fueled by the collective will of our holders to ensure long-term scarcity.</p>
+</div>
+<div class="ruby-card p-lg rounded-[16px] flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-md border border-primary-container/30">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="diversity_3" style="">diversity_3</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2" style="">Community</h3>
+<p class="text-on-surface-variant text-label-md" style="">A thriving legion of over 500 members across all socials, united in the mission to restore the Aether.</p>
+</div>
+</div>
+<!-- Security & Audit -->
+<div class="max-w-2xl mx-auto mt-16">
+<div class="ruby-card p-lg rounded-[16px]">
+<div class="flex items-center justify-center gap-3 mb-5">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center border border-primary-container/30">
+<span class="material-symbols-outlined text-primary text-xl">shield</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Security & Audit</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto">
+<div class="flex items-center gap-3 bg-surface-container p-3 rounded-xl"><span class="material-symbols-outlined text-green-400">verified</span><span class="text-on-surface-variant text-sm">Token Sniffer Score: <strong class="text-on-surface">80/100</strong></span></div>
+<div class="flex items-center gap-3 bg-surface-container p-3 rounded-xl"><span class="material-symbols-outlined text-green-400">lock</span><span class="text-on-surface-variant text-sm">Ownership <strong class="text-on-surface">Renounced</strong></span></div>
+<div class="flex items-center gap-3 bg-surface-container p-3 rounded-xl"><span class="material-symbols-outlined text-green-400">local_fire_department</span><span class="text-on-surface-variant text-sm">100% LP <strong class="text-on-surface">Burned</strong></span></div>
+<div class="flex items-center gap-3 bg-surface-container p-3 rounded-xl"><span class="material-symbols-outlined text-green-400">block</span><span class="text-on-surface-variant text-sm">No Blacklist / <strong class="text-on-surface">No Hidden Fees</strong></span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Section -->
+<section class="py-24 px-margin bg-gradient-to-b from-background to-neutral-950">
+<div class="max-w-4xl mx-auto text-center ruby-card p-xl rounded-[32px] border-primary-container/20">
+<h2 class="font-headline-lg text-headline-lg mb-6" style="">Join the MEGA Legion</h2>
+<p class="text-on-surface-variant text-body-lg mb-10" style="">The fire grows stronger with every member. Connect with our global community of innovators and enthusiasts.</p>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="flex items-center gap-3 bg-surface-container-highest px-6 py-3 rounded-xl border border-outline-variant hover:border-primary transition-all" href="https://x.com/makethcto" target="_blank" style="">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-on-surface"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span class="font-label-md" style="">X / Twitter</span>
+</a>
+<a class="flex items-center gap-3 bg-surface-container-highest px-6 py-3 rounded-xl border border-outline-variant hover:border-primary transition-all" href="https://t.me/MEGACTOETH" target="_blank" style="">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-on-surface"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+<span class="font-label-md" style="">Telegram</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="bg-neutral-950 border-t border-rose-900/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 max-w-7xl mx-auto space-y-6 md:space-y-0">
+<div class="text-lg font-bold text-neutral-100 uppercase tracking-widest font-['Inter']" style="">MEGA</div>
+<div class="flex space-x-8 font-['Inter'] text-sm uppercase tracking-widest text-neutral-500">
+<a class="hover:text-rose-400 transition-colors duration-300" href="https://x.com/makethcto" target="_blank" style="">Twitter</a>
+<a class="hover:text-rose-400 transition-colors duration-300" href="https://t.me/MEGACTOETH" target="_blank" style="">Telegram</a>
+</div>
+<div class="text-neutral-500 font-['Inter'] text-sm uppercase tracking-widest" style="">
+                © 2026 MEGA — Make Ethereum Great Again.
+            </div>
+</div>
+</footer>
+</body></html>

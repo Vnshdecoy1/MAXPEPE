@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MEGA Whitepaper — Make Ethereum Great Again</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "outline-variant":"#5b3f44","secondary-container":"#8e2c01","inverse-surface":"#e5e2e1",
+        "surface-bright":"#393939","on-tertiary-container":"#fff8f6","on-primary-fixed":"#3f0015",
+        "secondary":"#ffb59c","tertiary-container":"#af5d21","primary-fixed":"#ffd9de",
+        "primary-container":"#e0115f","on-primary-container":"#fff8f8","on-secondary-container":"#ffaa8d",
+        "inverse-on-surface":"#313030","surface-container-lowest":"#0e0e0e","outline":"#ab888d",
+        "surface-container-highest":"#353534","surface-container":"#201f1f","surface-tint":"#ffb2be",
+        "on-surface":"#e5e2e1","error":"#ffb4ab","on-primary":"#660026","background":"#131313",
+        "surface":"#131313","primary":"#ffb2be","on-background":"#e5e2e1",
+        "on-surface-variant":"#e4bdc2","inverse-primary":"#bc004d","surface-variant":"#353534",
+        "surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b",
+        "tertiary":"#ffb68a","primary-fixed-dim":"#ffb2be"
+      },
+      fontFamily: { "headline-xl":["Inter"],"headline-lg":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"label-md":["Inter"] },
+      fontSize: {
+        "headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"800"}],
+        "headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],
+        "headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],
+        "body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],
+        "body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],
+        "label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}]
+      },
+      spacing: { xs:"4px",sm:"8px",md:"16px",lg:"24px",xl:"40px",gutter:"20px",margin:"32px" }
+    }
+  }
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.glass-card { background: rgba(30,30,30,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(224,17,95,0.1); }
+.glass-card:hover { border-color: rgba(224,17,95,0.3); }
+.aura-ruby { background: radial-gradient(circle at top right, rgba(224,17,95,0.12), transparent 60%); }
+.aura-gold { background: radial-gradient(circle at bottom left, rgba(245,158,11,0.08), transparent 50%); }
+.scanline { background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.05) 50%); background-size: 100% 4px; }
+.stat-card { text-align:center; background:rgba(30,30,30,0.5); backdrop-filter:blur(12px); border:1px solid rgba(224,17,95,0.1); border-radius:12px; padding:20px 12px; }
+.stat-card .val { font-size:26px; font-weight:800; color:#ffb2be; line-height:1.2; }
+.stat-card .lbl { font-size:11px; color:#a09c9b; text-transform:uppercase; letter-spacing:0.06em; margin-top:4px; }
+.sec-badge { display:flex; align-items:center; gap:10px; background:rgba(30,30,30,0.5); border:1px solid rgba(224,17,95,0.1); border-radius:10px; padding:12px 16px; font-size:13px; color:#e4bdc2; backdrop-filter:blur(12px); }
+.sec-badge .dot { width:8px; height:8px; border-radius:50%; background:#4ade80; flex-shrink:0; }
+.milestone-row { display:flex; align-items:center; gap:16px; background:rgba(30,30,30,0.5); border-left:4px solid #e0115f; border-radius:0 10px 10px 0; padding:16px 20px; backdrop-filter:blur(12px); }
+.print-btn { position:fixed; bottom:24px; right:24px; z-index:100; background:#e0115f; color:#fff; border:none; padding:12px 24px; border-radius:12px; font-family:'Inter'; font-size:13px; font-weight:700; cursor:pointer; box-shadow:0 4px 24px rgba(224,17,95,0.4); display:flex; align-items:center; gap:8px; transition:transform 0.2s; }
+.print-btn:hover { transform:translateY(-2px); }
+@media print {
+  .print-btn, .sidebar-col, nav, footer, .aura-ruby, .aura-gold { display:none!important; }
+  body { background:#fff!important; color:#111!important; }
+  main { padding-top:0!important; }
+  .glass-card, .stat-card, .sec-badge, .milestone-row { background:#f9f9f9!important; border-color:#ddd!important; backdrop-filter:none!important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  section, .glass-card { page-break-inside:avoid; break-inside:avoid; }
+  h2 { page-break-after:avoid; }
+  .text-rose-500, [class*='text-rose'] { color:#e0115f!important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .text-on-surface-variant, .text-on-surface, p, li, span, div { color:#333!important; }
+  strong { color:#111!important; }
+  .stat-card .val { color:#e0115f!important; }
+}
+</style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+
+<button class="print-btn" onclick="window.print()">
+<span class="material-symbols-outlined" style="font-size:18px;">description</span> Save as PDF
+</button>
+
+<!-- Nav Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#121212]/90 backdrop-blur-xl border-b border-rose-900/30 shadow-lg">
+<div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 py-3 md:py-4 max-w-7xl mx-auto gap-2 md:gap-0">
+<a href="index.html" class="text-xl md:text-2xl font-black italic tracking-tighter text-rose-600 drop-shadow-[0_0_10px_rgba(224,17,95,0.6)]">MEGA</a>
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-1 md:gap-x-8 font-['Inter'] tracking-tight text-[11px] md:text-xs font-bold uppercase">
+<a class="text-gray-400 hover:text-rose-400 transition-all" href="index.html">Ecosystem</a>
+<a class="text-gray-400 hover:text-rose-400 transition-all" href="index.html#tokenomics">Tokenomics</a>
+<a class="text-gray-400 hover:text-rose-400 transition-all" href="roadmap.html">Roadmap</a>
+<a class="text-rose-500 border-b-2 border-rose-500 pb-0.5 md:pb-1" href="#">Whitepaper</a>
+</div>
+</div>
+</nav>
+
+<main class="relative pt-32 pb-24 overflow-hidden">
+<div class="absolute top-0 right-0 w-[800px] h-[800px] aura-ruby pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] aura-gold pointer-events-none"></div>
+
+<div class="max-w-5xl mx-auto px-6 relative z-10">
+
+<!-- Hero -->
+<header class="mb-20 text-center">
+<div class="inline-block mb-6 px-4 py-1 rounded-full border border-rose-500/30 bg-rose-500/10 text-primary font-label-md">
+<span class="material-symbols-outlined text-[14px] align-middle mr-1">history_edu</span> OFFICIAL WHITEPAPER — V1.0
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6 tracking-tighter">
+MEGA — Make <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-500">Ethereum</span> Great Again
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-4">A community-driven meme token built on Ethereum, designed to harness internet culture and collective participation.</p>
+<div class="font-mono text-xs text-gray-500 bg-surface-container-low inline-block px-4 py-2 rounded-lg border border-rose-900/20 break-all">0x971ecee62138ff32aa37e3b78683af9787e34d02</div>
+<div class="flex flex-wrap justify-center gap-3 mt-4">
+<a href="https://etherscan.io/token/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank" class="text-[11px] bg-surface-container px-3 py-1 rounded-full border border-rose-900/20 text-on-surface-variant hover:border-rose-500 transition-all">Etherscan</a>
+<a href="https://gmgn.ai/eth/token/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank" class="text-[11px] bg-surface-container px-3 py-1 rounded-full border border-rose-900/20 text-on-surface-variant hover:border-rose-500 transition-all">GMGN.AI</a>
+<a href="https://tokensniffer.com/token/1/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank" class="text-[11px] bg-surface-container px-3 py-1 rounded-full border border-rose-900/20 text-on-surface-variant hover:border-rose-500 transition-all">Token Sniffer</a>
+</div>
+</header>
+
+<!-- Grid: Sidebar + Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+
+<!-- Sidebar -->
+<aside class="md:col-span-3 hidden md:block sidebar-col">
+<div class="sticky top-32 space-y-4">
+<p class="font-label-md text-primary uppercase mb-6">Chapters</p>
+<nav class="space-y-3 text-sm">
+<a class="block text-rose-400 hover:text-rose-300 transition-colors" href="#intro">I. Introduction</a>
+<a class="block text-on-surface-variant hover:text-rose-400 transition-colors" href="#vision">II. Vision</a>
+<a class="block text-on-surface-variant hover:text-rose-400 transition-colors" href="#tokenomics">III. Tokenomics</a>
+<a class="block text-on-surface-variant hover:text-rose-400 transition-colors" href="#security">IV. Security & Audit</a>
+<a class="block text-on-surface-variant hover:text-rose-400 transition-colors" href="#milestones">V. Growth Milestones</a>
+<a class="block text-on-surface-variant hover:text-rose-400 transition-colors" href="#roadmap">VI. Roadmap</a>
+<a class="block text-on-surface-variant hover:text-rose-400 transition-colors" href="#conclusion">VII. Conclusion</a>
+</nav>
+<div class="mt-12 p-4 glass-card rounded-xl">
+<p class="text-[10px] text-on-surface-variant mb-2 uppercase tracking-widest">Save Document</p>
+<button onclick="window.print()" class="flex items-center gap-2 text-rose-500 font-bold text-sm group">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+<span class="group-hover:underline">Download PDF</span>
+</button>
+</div>
+</div>
+</aside>
+
+<!-- Content -->
+<article class="md:col-span-9 space-y-12">
+
+<!-- 1. Introduction -->
+<section class="glass-card p-10 rounded-xl relative overflow-hidden" id="intro">
+<div class="scanline absolute inset-0 opacity-[0.03] pointer-events-none"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6 flex items-center gap-3">
+<span class="text-rose-500 font-black italic">01.</span> Introduction
+</h2>
+<p class="text-on-surface-variant leading-relaxed mb-6">MEGA is a community-driven meme token built on Ethereum, designed to harness internet culture and collective participation. Unlike narrative-driven meme coins tied to external themes, MEGA focuses on Ethereum pride, decentralization, and community empowerment.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg">trending_up</span> Internet meme culture</div>
+<div class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg">token</span> Ethereum ecosystem engagement</div>
+<div class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg">group</span> Community-driven growth</div>
+<div class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg">visibility</span> Transparent tokenomics</div>
+</div>
+</section>
+
+<!-- 2. Vision -->
+<section class="glass-card p-10 rounded-xl relative overflow-hidden" id="vision">
+<div class="scanline absolute inset-0 opacity-[0.03] pointer-events-none"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6 flex items-center gap-3">
+<span class="text-rose-500 font-black italic">02.</span> Vision
+</h2>
+<p class="text-on-surface-variant leading-relaxed mb-6">The mission of MEGA is to become the leading meme token celebrating Ethereum, while fostering a strong, transparent, and fair community.</p>
+<div class="space-y-3">
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg mt-0.5">check_circle</span> Build a hub for Ethereum-themed memes</div>
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg mt-0.5">check_circle</span> Encourage grassroots adoption through contests and giveaways</div>
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg mt-0.5">check_circle</span> Provide fair tokenomics with no hidden taxes or blacklists</div>
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-rose-500 text-lg mt-0.5">check_circle</span> Expand liquidity and exchange listings</div>
+</div>
+</section>
+
+<!-- 3. Tokenomics (Bento) -->
+<section class="space-y-6" id="tokenomics">
+<h2 class="font-headline-lg text-headline-lg flex items-center gap-3">
+<span class="text-rose-500 font-black italic">03.</span> Tokenomics
+</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+<div class="stat-card"><div class="val">MEGA</div><div class="lbl">Ticker</div></div>
+<div class="stat-card"><div class="val">1B</div><div class="lbl">Total Supply</div></div>
+<div class="stat-card"><div class="val">5%</div><div class="lbl">Burned</div></div>
+<div class="stat-card"><div class="val">0% / 0%</div><div class="lbl">Buy / Sell Tax</div></div>
+<div class="stat-card"><div class="val">208+</div><div class="lbl">Holders</div></div>
+<div class="stat-card"><div class="val">Renounced</div><div class="lbl">Ownership</div></div>
+</div>
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-rose-600">
+<p class="text-on-surface-variant text-sm"><strong class="text-on-surface">Liquidity:</strong> Initial pool created with 100% of the total supply paired against 0.65 ETH on Uniswap v2. The LP tokens were burned immediately at launch — 100% LP burned.</p>
+</div>
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-amber-500">
+<p class="text-on-surface-variant text-sm"><strong class="text-on-surface">Burn Mechanism:</strong> 5% of supply already burned, with more scheduled burns to reduce circulating supply.</p>
+</div>
+</section>
+
+<!-- 4. Security -->
+<section class="glass-card p-10 rounded-xl" id="security">
+<h2 class="font-headline-lg text-headline-lg mb-6 flex items-center gap-3">
+<span class="text-rose-500 font-black italic">04.</span> Security & Audit
+</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="sec-badge"><span class="dot"></span> Token Sniffer Score: <strong class="text-on-surface ml-1">80/100</strong></div>
+<div class="sec-badge"><span class="dot"></span> Ownership <strong class="text-on-surface ml-1">Renounced</strong></div>
+<div class="sec-badge"><span class="dot"></span> 100% LP <strong class="text-on-surface ml-1">Burned</strong></div>
+<div class="sec-badge"><span class="dot"></span> No Blacklist / <strong class="text-on-surface ml-1">No Hidden Fees</strong></div>
+</div>
+</section>
+
+<!-- 5. Community -->
+<section class="glass-card p-10 rounded-xl relative overflow-hidden">
+<div class="scanline absolute inset-0 opacity-[0.03] pointer-events-none"></div>
+<h2 class="font-headline-lg text-headline-lg mb-6 flex items-center gap-3">
+<span class="text-rose-500 font-black italic">05.</span> Community Incentives
+</h2>
+<div class="space-y-3">
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-amber-500 text-lg mt-0.5">redeem</span> Giveaways and meme contests</div>
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-amber-500 text-lg mt-0.5">emoji_events</span> Holder milestone rewards</div>
+<div class="flex items-start gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-amber-500 text-lg mt-0.5">forum</span> Transparent communication channels</div>
+</div>
+</section>
+
+<!-- 6. Milestones -->
+<section class="space-y-6" id="milestones">
+<h2 class="font-headline-lg text-headline-lg flex items-center gap-3">
+<span class="text-rose-500 font-black italic">06.</span> Growth Milestones
+</h2>
+<div class="space-y-3">
+<div class="milestone-row"><span class="text-primary font-bold whitespace-nowrap min-w-[80px]">$50K MC</span><span class="text-on-surface-variant text-sm">Listings on CoinGecko and Jupiter</span></div>
+<div class="milestone-row" style="border-color:#f59e0b"><span class="text-amber-400 font-bold whitespace-nowrap min-w-[80px]">Merch</span><span class="text-on-surface-variant text-sm">Ethereum-themed apparel and collectibles</span></div>
+<div class="milestone-row" style="border-color:#ffb59c"><span class="text-secondary font-bold whitespace-nowrap min-w-[80px]">CEX</span><span class="text-on-surface-variant text-sm">Pursue centralized exchange listings</span></div>
+<div class="milestone-row" style="border-color:#ab888d"><span class="text-outline font-bold whitespace-nowrap min-w-[80px]">Liquidity</span><span class="text-on-surface-variant text-sm">Additional burns and liquidity injections</span></div>
+</div>
+</section>
+
+<!-- 7. Roadmap -->
+<section class="glass-card p-10 rounded-xl" id="roadmap">
+<h2 class="font-headline-lg text-headline-lg mb-8 flex items-center gap-3">
+<span class="text-rose-500 font-black italic">07.</span> Roadmap
+</h2>
+<div class="space-y-10">
+
+<!-- Phase 1 -->
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container flex items-center justify-center font-bold text-white">1</div>
+<div class="flex-1">
+<div class="text-[10px] font-bold text-rose-400 uppercase tracking-widest mb-1">Phase 1 — Foundation (Completed)</div>
+<h4 class="font-bold text-lg mb-2">Launch & LP Burn</h4>
+<div class="space-y-1.5 text-on-surface-variant text-sm">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-green-400 text-base mt-0.5">check_circle</span> Token deployed on Ethereum mainnet</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-green-400 text-base mt-0.5">check_circle</span> Initial liquidity pool: 100% supply + 0.65 ETH on Uniswap v2</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-green-400 text-base mt-0.5">check_circle</span> 100% LP tokens burned at launch — irrevocable</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-green-400 text-base mt-0.5">check_circle</span> Contract ownership renounced</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-green-400 text-base mt-0.5">check_circle</span> Token Sniffer audit: 80/100 score</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-green-400 text-base mt-0.5">check_circle</span> X (Twitter) & Telegram communities launched</div>
+</div>
+</div>
+</div>
+
+<!-- Phase 2 -->
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/60 border-2 border-primary-container flex items-center justify-center font-bold text-white">2</div>
+<div class="flex-1">
+<div class="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Phase 2 — Community Ignition (In Progress)</div>
+<h4 class="font-bold text-lg mb-2">Meme Wars & Growth</h4>
+<div class="space-y-1.5 text-on-surface-variant text-sm">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-amber-400 text-base mt-0.5">pending</span> Weekly meme competitions with $MEGA prize pools</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-amber-400 text-base mt-0.5">pending</span> "Best Ethereum Meme" community voting events</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-amber-400 text-base mt-0.5">pending</span> Holder milestone giveaways (500, 1K, 5K holders)</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-amber-400 text-base mt-0.5">pending</span> First scheduled token burn event — target 5% of supply</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-amber-400 text-base mt-0.5">pending</span> CoinGecko & CoinMarketCap listing applications</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-amber-400 text-base mt-0.5">pending</span> Official whitepaper & website launch</div>
+</div>
+</div>
+</div>
+
+<!-- Phase 3 -->
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container border-2 border-outline-variant flex items-center justify-center font-bold text-outline">3</div>
+<div class="flex-1">
+<div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Phase 3 — Viral Expansion</div>
+<h4 class="font-bold text-lg mb-2">Marketing & Burns</h4>
+<div class="space-y-1.5 text-on-surface-variant text-sm">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Crypto influencer & KOL raid campaigns</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Monthly community burn events — vote on burn %</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> MEGA meme generator tool (create & share ETH memes)</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Liquidity growth through organic volume milestones</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Ethereum community partnerships & cross-promos</div>
+</div>
+</div>
+</div>
+
+<!-- Phase 4 -->
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container border-2 border-outline-variant flex items-center justify-center font-bold text-outline">4</div>
+<div class="flex-1">
+<div class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Phase 4 — Ecosystem Scale</div>
+<h4 class="font-bold text-lg mb-2">CEX, Merch & Beyond</h4>
+<div class="space-y-1.5 text-on-surface-variant text-sm">
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Pursue centralized exchange (CEX) listings</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> MEGA merchandise store — ETH-themed apparel & collectibles</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Expanded deflationary burn program — milestone-based burns</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> Strategic DeFi partnerships & liquidity injections</div>
+<div class="flex items-start gap-2"><span class="material-symbols-outlined text-gray-500 text-base mt-0.5">radio_button_unchecked</span> DAO governance exploration for community-led decisions</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- 8. Conclusion -->
+<section class="glass-card p-10 rounded-xl text-center border-rose-500/20 bg-gradient-to-br from-rose-500/5 to-transparent" id="conclusion">
+<h2 class="font-headline-lg text-headline-lg mb-6 justify-center flex items-center gap-3">
+<span class="material-symbols-outlined text-rose-500">auto_awesome</span> Conclusion
+</h2>
+<p class="text-on-surface-variant leading-relaxed max-w-2xl mx-auto text-lg">MEGA is more than a meme—it's a movement to celebrate Ethereum and community-driven growth. With transparent tokenomics, a burn mechanism reducing supply, and strong community incentives, MEGA aims to become a viral and sustainable meme coin within the Ethereum ecosystem.</p>
+</section>
+
+</article>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-12 bg-[#121212] border-t border-rose-900/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-black text-rose-600">MEGA</div>
+<div class="font-['Inter'] text-[10px] tracking-widest text-gray-500 uppercase">© 2026 MEGA — Make Ethereum Great Again.</div>
+</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[10px] tracking-widest text-gray-600 hover:text-rose-400 transition-colors uppercase" href="https://x.com/makethcto" target="_blank">Twitter</a>
+<a class="font-['Inter'] text-[10px] tracking-widest text-gray-600 hover:text-rose-400 transition-colors uppercase" href="https://t.me/MEGACTOETH" target="_blank">Telegram</a>
+<a class="font-['Inter'] text-[10px] tracking-widest text-gray-600 hover:text-rose-400 transition-colors uppercase" href="https://etherscan.io/token/0x971ecee62138ff32aa37e3b78683af9787e34d02" target="_blank">Contract</a>
+</div>
+<div class="flex gap-2 items-center">
+<div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+<span class="text-[10px] text-gray-500 uppercase tracking-tighter">Ethereum Mainnet</span>
+</div>
+</div>
+</footer>
+</body></html>
