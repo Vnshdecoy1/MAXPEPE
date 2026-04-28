@@ -1,0 +1,324 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MaxPepe - The Ultimate Meme Warrior</title>
+<link rel="icon" type="image/png" href="aether-hero-bg.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3a0915",
+                    "surface-dim": "#131313",
+                    "tertiary": "#c6c6cb",
+                    "tertiary-container": "#909095",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-container": "#4c1722",
+                    "secondary": "#ecbda4",
+                    "on-primary-fixed-variant": "#70343e",
+                    "inverse-primary": "#8c4b55",
+                    "on-surface": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#46464b",
+                    "surface-container": "#1f1f1f",
+                    "on-background": "#e2e2e2",
+                    "secondary-fixed": "#ffdbca",
+                    "surface-container-highest": "#353535",
+                    "surface-variant": "#353535",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#ffd9dd",
+                    "surface": "#131313",
+                    "surface-container-low": "#1b1b1b",
+                    "on-tertiary-fixed": "#1a1b1f",
+                    "on-tertiary": "#2f3034",
+                    "on-secondary": "#462918",
+                    "inverse-on-surface": "#303030",
+                    "secondary-fixed-dim": "#ecbda4",
+                    "on-secondary-fixed-variant": "#603f2d",
+                    "tertiary-fixed-dim": "#c6c6cb",
+                    "primary-fixed-dim": "#ffb2bc",
+                    "surface-bright": "#393939",
+                    "on-primary": "#551e29",
+                    "on-tertiary-container": "#282a2e",
+                    "tertiary-fixed": "#e3e2e7",
+                    "on-secondary-fixed": "#2e1506",
+                    "on-secondary-container": "#ddaf97",
+                    "on-surface-variant": "#d7c1c3",
+                    "primary-container": "#c77b86",
+                    "primary": "#ffb2bc",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-container": "#63412f",
+                    "surface-tint": "#ffb2bc",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e2e2e2",
+                    "background": "#131313",
+                    "outline": "#9f8c8e",
+                    "outline-variant": "#524345",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "container-max": "1200px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "xxl": "80px",
+                    "unit": "4px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h2": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h3": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 178, 188, 0.1);
+        }
+        .rose-glow {
+            box-shadow: 0 0 20px rgba(183, 110, 121, 0.2);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(183, 110, 121, 0.4);
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-[#B76E79]/10 shadow-[0_4_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1200px] mx-auto">
+<div class="flex items-center gap-3 text-xl font-bold tracking-tighter text-[#B76E79] drop-shadow-[0_0_8px_rgba(183,110,121,0.5)]" style="">
+<img src="aether-hero-bg.png" alt="MaxPepe Logo" class="w-8 h-8 rounded-full object-cover border border-[#B76E79]/30">
+MAX PEPE
+</div>
+<div class="hidden md:flex items-center gap-8 font-['Inter'] tracking-wide uppercase text-sm">
+<a class="text-[#B76E79] border-b-2 border-[#B76E79] pb-1 hover:text-[#B76E79] transition-colors duration-300" href="#" style=""><br></a>
+<a class="text-gray-400 hover:text-[#B76E79] transition-colors duration-300" href="#" style=""><br></a>
+<a class="text-gray-400 hover:text-[#B76E79] transition-colors duration-300" href="#" style=""><br></a>
+<a class="text-gray-400 hover:text-[#B76E79] transition-colors duration-300" href="#" style=""><br></a>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden px-8">
+<div class="absolute inset-0 z-0">
+<img alt="Aether Anime Aesthetic" class="w-full h-full object-cover opacity-50" data-alt="A majestic Pepe the Frog portrayed as a Roman Emperor in golden armor with a laurel wreath, set against a deep crimson background, maintaining a cinematic and authoritative aesthetic." src="aether-hero-bg.png" style="">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black"></div>
+</div>
+<div class="relative z-10 max-w-[1200px] w-full text-center">
+<span class="font-label-caps text-label-caps text-primary mb-md block uppercase tracking-[0.3em]" style="">$MAXPEPE</span>
+<h1 class="font-h1 text-h1 text-white mb-lg max-w-4xl mx-auto text-glow" style="">The Betrayed <span class="text-primary italic" style="">Meme Warrior</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl opacity-80" style="">Just as Maximus was betrayed by Rome, Pepe was dismissed as "just a joke." MaxPepe rises from that betrayal, reclaiming dignity in the crypto arena.</p>
+<div class="flex flex-col md:flex-row gap-md justify-center items-center">
+<a href="https://dexscreener.com/solana/6k4dkwmvbzzwh5n8ku11dvm2yj28j3uask1kvcskbwyj" target="_blank" class="flex items-center gap-2 bg-primary text-on-primary font-label-caps text-label-caps py-4 px-10 rounded-lg rose-glow hover:brightness-110 transition-all uppercase" style="">
+    <span class="material-symbols-outlined text-[18px]">shopping_cart</span> BUY NOW
+</a>
+<a href="https://dexscreener.com/solana/6k4dkwmvbzzwh5n8ku11dvm2yj28j3uask1kvcskbwyj" target="_blank" class="flex items-center gap-2 border border-primary text-primary font-label-caps text-label-caps py-4 px-10 rounded-lg hover:bg-primary/10 transition-all uppercase" style="">
+    <span class="material-symbols-outlined text-[18px]">show_chart</span> CHART
+</a>
+</div>
+</div>
+</section>
+<!-- The Legend of MaxPepe Narrative -->
+<section class="py-xxl px-8 max-w-[1200px] mx-auto">
+<div class="mb-xl text-center">
+<h2 class="font-h2 text-h2 text-white mb-xs" style="">The Legend of MaxPepe</h2>
+<div class="h-1 w-20 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="relative rounded-2xl overflow-hidden glass-card border-primary/20 group">
+<img alt="Gladiator Pepe" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" src="gladiator-pepe.png" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+</div>
+<div class="flex flex-col gap-lg">
+<!-- Chapter 1 -->
+<div class="relative pl-lg border-l border-primary/30 pb-lg">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-primary rose-glow"></div>
+<span class="text-primary font-label-caps text-label-caps mb-xs block" style="">Chapter I</span>
+<h3 class="font-h3 text-h3 text-white mb-sm" style="">The Betrayed Meme Warrior</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">Once dismissed as merely a joke in the sprawling digital empire, Pepe was cast aside by the elites. Now, clad in obsidian armor, he rises from the depths of forgotten threads to reclaim his dignity and rewrite history.</p>
+</div>
+<!-- Chapter 2 -->
+<div class="relative pl-lg border-l border-primary/30 pb-lg">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-primary rose-glow"></div>
+<span class="text-primary font-label-caps text-label-caps mb-xs block" style="">Chapter II</span>
+<h3 class="font-h3 text-h3 text-white mb-sm" style="">Arena of Speculation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">The blockchain has become the new Colosseum. Here, MaxPepe fights not with steel, but with cascading liquidity and unbreakable community strength, turning every transaction into a strike for freedom.</p>
+</div>
+<!-- Chapter 3 -->
+<div class="relative pl-lg border-l border-primary/30 pb-lg">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-primary rose-glow"></div>
+<span class="text-primary font-label-caps text-label-caps mb-xs block" style="">Chapter III</span>
+<h3 class="font-h3 text-h3 text-white mb-sm" style="">Freedom Through Virality</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">He refuses to fight for mere power or centralized control. His mission is absolute: freeing memes from being undervalued commodities and establishing them as the true cultural currency of the realm.</p>
+</div>
+<!-- Chapter 4 -->
+<div class="relative pl-lg border-l-transparent">
+<div class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-primary rose-glow"></div>
+<span class="text-primary font-label-caps text-label-caps mb-xs block" style="">Chapter IV</span>
+<h3 class="font-h3 text-h3 text-white mb-sm" style="">Bloodline vs. Community</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">A direct challenge to the legacy coins and their aristocratic bloodlines. The final verdict echoes through the network: Rome belongs to the people, and memes belong to the internet.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tokenomics -->
+<section class="py-xxl bg-surface-container-lowest overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-8 grid md:grid-cols-2 items-center gap-xxl">
+<div>
+<h2 class="font-h2 text-h2 text-white mb-md" style="">Absolute <span class="text-primary" style="">Scarcity</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg" style="">MaxPepe's tokenomics are designed for absolute fairness and aggressive deflation. Forged on Solana, the supply is strict, and the liquidity is locked in fire.</p>
+<ul class="space-y-md">
+<li class="flex items-start gap-md" style="">
+<div class="h-6 w-6 rounded-full bg-primary/20 border border-primary flex items-center justify-center shrink-0 mt-1">
+<div class="h-2 w-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<span class="font-h3 text-h3 text-white" style="">1,000,000 Total Supply</span>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">A finite armory of tokens minted for the ultimate gladiator. No inflation, just pure scarcity.</p>
+</div>
+</li>
+<li class="flex items-start gap-md" style="">
+<div class="h-6 w-6 rounded-full bg-primary/20 border border-primary flex items-center justify-center shrink-0 mt-1">
+<div class="h-2 w-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<span class="font-h3 text-h3 text-white" style="">100% Liquidity Burned</span>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">The keys to the arena have been destroyed. All initial liquidity pairs were permanently burned to guarantee a fair, rug-free battlefield.</p>
+</div>
+</li>
+<li class="flex items-start gap-md" style="">
+<div class="h-6 w-6 rounded-full bg-primary/20 border border-primary flex items-center justify-center shrink-0 mt-1">
+<div class="h-2 w-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<span class="font-h3 text-h3 text-white" style="">80,000 Token Sacrifice</span>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">A massive burn event that systematically removed tokens from circulation, constantly increasing the value of the remaining supply.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative">
+<div class="aspect-square glass-card rounded-full flex items-center justify-center rose-glow border-primary/20 relative">
+<div class="text-center">
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-xs" style="">Ticker</span>
+<span class="text-5xl font-bold text-white tracking-tighter" style="">MAXPEPE</span>
+</div>
+<!-- Decorative circles -->
+<div class="absolute inset-0 rounded-full border border-primary/10 scale-110"></div>
+<div class="absolute inset-0 rounded-full border border-primary/5 scale-125"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Roadmap -->
+<section class="py-xxl px-8 max-w-[1200px] mx-auto">
+<h2 class="font-h2 text-h2 text-white mb-xl text-center" style="">Path to the Infinite</h2>
+<div class="relative space-y-lg">
+<!-- Vertical Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/0 via-primary/50 to-primary/0 hidden md:block"></div>
+<!-- Q1 -->
+<div class="flex flex-col md:flex-row items-center gap-lg relative">
+<div class="md:w-1/2 md:text-right">
+<span class="font-label-caps text-label-caps text-primary" style="">Phase 01</span>
+<h3 class="font-h3 text-h3 text-white" style="">Liquidity & Launch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">Forged in the fires of the blockchain, MaxPepe entered the arena with a finite supply of 1,000,000 tokens. To ensure true decentralization, the initial liquidity pool was immediately burned.</p>
+</div>
+<div class="h-4 w-4 rounded-full bg-primary rose-glow z-10 hidden md:block"></div>
+<div class="md:w-1/2"></div>
+</div>
+<!-- Q2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-lg relative">
+<div class="md:w-1/2">
+<span class="font-label-caps text-label-caps text-primary" style="">Phase 02</span>
+<h3 class="font-h3 text-h3 text-white" style="">Community Building</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">The MaxPepe army mobilizes. Our initial target is to gather an elite vanguard of 50 diamond-handed holders and rally over 200 warriors across our social platforms to spread the legend.</p>
+</div>
+<div class="h-4 w-4 rounded-full bg-primary rose-glow z-10 hidden md:block"></div>
+<div class="md:w-1/2"></div>
+</div>
+<!-- Q3 -->
+<div class="flex flex-col md:flex-row items-center gap-lg relative">
+<div class="md:w-1/2 md:text-right">
+<span class="font-label-caps text-label-caps text-primary" style="">Phase 03</span>
+<h3 class="font-h3 text-h3 text-white" style="">The Great Sacrifice</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" style="">A massive deflationary event where 80,000 tokens are burned. This calculated sacrifice permanently reduces the total supply, creating extreme scarcity to drive the value ever higher.</p>
+</div>
+<div class="h-4 w-4 rounded-full bg-primary rose-glow z-10 hidden md:block"></div>
+<div class="md:w-1/2"></div>
+</div>
+</div>
+</section>
+<!-- Community Section -->
+<section class="py-xxl px-8 bg-gradient-to-b from-black to-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto glass-card p-xxl rounded-2xl border-primary/20 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(183,110,121,0.05)_0%,transparent_70%)]"></div>
+<div class="relative z-10">
+<h2 class="font-h2 text-h2 text-white mb-md" style="">Join the Covenant</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-xl" style="">Connect with thousands of Aether disciples in our encrypted sanctuary.</p>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="flex items-center gap-sm bg-black/40 px-lg py-md rounded-lg border border-primary/10 hover:border-primary/40 transition-all" href="https://t.me/MAXIMUSPEP" target="_blank" style="">
+<span class="material-symbols-outlined text-primary" data-icon="send" style="">send</span>
+<span class="font-label-caps text-label-caps text-white" style="">Telegram</span>
+</a>
+<a class="flex items-center gap-sm bg-black/40 px-lg py-md rounded-lg border border-primary/10 hover:border-primary/40 transition-all" href="https://x.com/pepecus_maximus" target="_blank" style="">
+<span class="material-symbols-outlined text-primary" data-icon="alternate_email" style="">alternate_email</span>
+<span class="font-label-caps text-label-caps text-white" style="">Twitter / X</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-black border-t border-[#B76E79]/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-[1200px] mx-auto gap-6 font-['Inter']">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-semibold text-[#B76E79]" style="">MaxPepe Protocol</div>
+<p class="font-['Inter'] text-xs font-light tracking-widest uppercase text-gray-600" style="">
+                    © 2024 MaxPepe. The Ultimate Meme Warrior.
+                </p>
+</div>
+<div class="flex gap-8 text-xs font-light tracking-widest uppercase">
+<a class="text-gray-600 hover:text-[#B76E79] hover:underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="https://t.me/MAXIMUSPEP" target="_blank" style="">Telegram</a>
+<a class="text-gray-600 hover:text-[#B76E79] hover:underline underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="https://x.com/pepecus_maximus" target="_blank" style="">Twitter</a>
+</div>
+</div>
+</footer>
+</body></html>
